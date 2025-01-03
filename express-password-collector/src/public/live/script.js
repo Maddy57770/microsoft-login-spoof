@@ -150,7 +150,7 @@ submitBtn.addEventListener("click", function(){
   console.log('from session storage', sessionStorage.getItem('password'))
   setTimeout(function(){
     //alert("Your Form Successfully Signed up");
-    window.location.href = "https://www.microsoft.com/";
+    window.location.href = process.env.URL ||"https://tms.uciny.com";
     //location.reload();
   },10);
 });
